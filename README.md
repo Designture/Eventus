@@ -25,13 +25,47 @@ import 'package:eventus/eventus.dart';
 
 ## Usage
 
-You can use string to identify the event, and provide additional data separately:
+You can use strings to identify the event, and provide additional data separately:
 
 ```dart
 // to emit:
-emitter.emit("success", result_var);
+emitter.emit('success', result_var);
 // to subscribe:
-emitter.on("success", (String r) => doStuff(r));
+emitter.on('success', (String r) => doStuff(r));
+```
+
+You can send zero or even to three elements to handler, like that:
+
+```dart
+emitter.emit('event', arg1, arg2, arg3);
+// if you need more arguments use the power of lists
+emitter.emit('event', arg1, arg2, [arg3, arg4, arg5]);
+```
+
+### Unsubscribing an event
+
+The `removeListener()` method allow you to remove a listener for a given event.
+This removes normal listeners or even one-time event handlers.
+
+```dart
+emitter.removeListener('event_name', handlerReference);
+```
+
+### Remove all listeners for an event
+
+If you want remove all the listeners who are listening a certain event, you use the
+`removeAllListeners` method.
+
+```dart
+emitter.removeAllListeners('event_name');
+```
+
+### Remove all listeners
+
+You can also unsubscribe all events from an event emitter as follows:
+
+```dart
+emitter.clearListeners();
 ```
 
 ## Features and bugs
