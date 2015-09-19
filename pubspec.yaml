@@ -1,8 +1,9 @@
 name: eventus
-description: A starting point for Dart libraries or applications.
+description: Eventus is a professional implementation of EventEmitter for Dart.
 version: 0.1.0
 author: Gil Mendes <gilmendes@designture.net>
-homepage: https://github.com/Designture/Eventus
+homepage: http://designture.github.io/Eventus/
+documentation:
 
 environment:
   sdk: '>=1.0.0 <2.0.0'
